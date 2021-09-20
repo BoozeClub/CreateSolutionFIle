@@ -1,0 +1,12 @@
+C:\Data\Source\C#\CreateSolutionFile\CreateSolutionFileLibrary\obj\Debug\net5.0\CreateSolutionFileLibrary.csproj.AssemblyReference.cache
+C:\Data\Source\C#\CreateSolutionFile\CreateSolutionFileLibrary\obj\Debug\net5.0\CreateSolutionFileLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Data\Source\C#\CreateSolutionFile\CreateSolutionFileLibrary\obj\Debug\net5.0\CreateSolutionFileLibrary.AssemblyInfoInputs.cache
+C:\Data\Source\C#\CreateSolutionFile\CreateSolutionFileLibrary\obj\Debug\net5.0\CreateSolutionFileLibrary.AssemblyInfo.cs
+C:\Data\Source\C#\CreateSolutionFile\CreateSolutionFileLibrary\obj\Debug\net5.0\CreateSolutionFileLibrary.csproj.CoreCompileInputs.cache
+C:\Data\Source\C#\CreateSolutionFile\CreateSolutionFileLibrary\bin\Debug\net5.0\CreateSolutionFileLibrary.deps.json
+C:\Data\Source\C#\CreateSolutionFile\CreateSolutionFileLibrary\bin\Debug\net5.0\CreateSolutionFileLibrary.dll
+C:\Data\Source\C#\CreateSolutionFile\CreateSolutionFileLibrary\bin\Debug\net5.0\ref\CreateSolutionFileLibrary.dll
+C:\Data\Source\C#\CreateSolutionFile\CreateSolutionFileLibrary\bin\Debug\net5.0\CreateSolutionFileLibrary.pdb
+C:\Data\Source\C#\CreateSolutionFile\CreateSolutionFileLibrary\obj\Debug\net5.0\CreateSolutionFileLibrary.dll
+C:\Data\Source\C#\CreateSolutionFile\CreateSolutionFileLibrary\obj\Debug\net5.0\ref\CreateSolutionFileLibrary.dll
+C:\Data\Source\C#\CreateSolutionFile\CreateSolutionFileLibrary\obj\Debug\net5.0\CreateSolutionFileLibrary.pdb
