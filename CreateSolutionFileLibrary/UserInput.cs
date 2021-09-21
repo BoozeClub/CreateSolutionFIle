@@ -1,5 +1,6 @@
-namespace CreateSolutionFileLibrary
-{
+using System;
+//namespace CreateSolutionFileLibrary.UserInput
+//{
     public class UserInput
     {
         public string SolutionName      { get; set; }
@@ -22,5 +23,6 @@ namespace CreateSolutionFileLibrary
             LibraryName         = $"{libraryName}Library";
             SolutionDirectory   = solutionDirectory;
         }
+        
     }
-}
+//}

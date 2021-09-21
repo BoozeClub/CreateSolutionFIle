@@ -24,5 +24,4 @@ namespace CreateSolutionFileLibrary
             Output  = output;
         }
     }
-
 }

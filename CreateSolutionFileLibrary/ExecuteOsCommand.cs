@@ -1,9 +1,9 @@
 using System;
 using System.IO;
 using System.Diagnostics;
-namespace CreateSolutionFileLibrary
+namespace CreateSolutionFileLibrary.ExecuteOsCommand
 {
-    public class ExecuteOsCommand
+    public static class ExecuteOsCommand
     {
         public static OsCommand ExecuteCommand(OsCommand OsCmd)
         {

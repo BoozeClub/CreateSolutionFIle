@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\CreateSolutionFileLibrary.csproj": {}
+    "C:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\CreateSolutionFileLibrary.csproj": {}
   },
   "projects": {
-    "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\CreateSolutionFileLibrary.csproj": {
+    "C:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\CreateSolutionFileLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\CreateSolutionFileLibrary.csproj",
+        "projectUniqueName": "C:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\CreateSolutionFileLibrary.csproj",
         "projectName": "CreateSolutionFileLibrary",
-        "projectPath": "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\CreateSolutionFileLibrary.csproj",
+        "projectPath": "C:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\CreateSolutionFileLibrary.csproj",
         "packagesPath": "C:\\Users\\Ed\\.nuget\\packages\\",
-        "outputPath": "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\obj\\",
+        "outputPath": "C:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ed\\AppData\\Roaming\\NuGet\\NuGet.Config"
