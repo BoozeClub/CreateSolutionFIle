@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Data\\Source\\C#\\CreateSolutionFile\\createsolutionfile\\CreateSolutionFile.csproj": {}
+    "C:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFile\\CreateSolutionFile.csproj": {}
   },
   "projects": {
     "C:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\CreateSolutionFileLibrary.csproj": {
@@ -56,14 +56,14 @@
         }
       }
     },
-    "C:\\Data\\Source\\C#\\CreateSolutionFile\\createsolutionfile\\CreateSolutionFile.csproj": {
+    "C:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFile\\CreateSolutionFile.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Data\\Source\\C#\\CreateSolutionFile\\createsolutionfile\\CreateSolutionFile.csproj",
+        "projectUniqueName": "C:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFile\\CreateSolutionFile.csproj",
         "projectName": "CreateSolutionFile",
-        "projectPath": "C:\\Data\\Source\\C#\\CreateSolutionFile\\createsolutionfile\\CreateSolutionFile.csproj",
+        "projectPath": "C:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFile\\CreateSolutionFile.csproj",
         "packagesPath": "C:\\Users\\Ed\\.nuget\\packages\\",
-        "outputPath": "C:\\Data\\Source\\C#\\CreateSolutionFile\\createsolutionfile\\obj\\",
+        "outputPath": "C:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFile\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ed\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
+using System.IO;
+using System.Threading.Tasks;
 using CreateSolutionFileLibrary;
 //using CreateSolutionFileLibrary.UserInput;
-using CreateSolutionFileLibrary.UserInteractions;
-using CreateSolutionFileLibrary.ExecuteOsCommand;
 
 namespace CreateSolutionFile
 {
@@ -11,109 +11,108 @@ namespace CreateSolutionFile
     {
         static void Main(string[] args)
         {
+            // Purpose:
+            //          Automate .NET Console Solution File Creation.
+            //
+            // Features:
+            //          1. Program will not overwrite an existing solution file. Instead, program will abort w/ message.
+            //          2. Command line syntax:
+            //                  dotnet run <parm>
+            //                                      Where <parm> = Any project name (1 Continous word), or
+            //                                                     "input"
+            //                                                     If "input", the program will prompt the user for input.
+            //                                                     If <parm> isn't specified, it will default to:
+            //                                                           "TestApplication".
+            //          3. Enforces the following standards:
+            //                  Class Library name will always have "Library" appended to it.
+            //                  Test Project name will always have "Tests" appended to it.
+            //                  Default program class is named Program.cs.
+            //                  Default library class is named Class1.cs.
+            //                  Default nUnit test class is named Unit_Test1.cs.
+            //          4. Creates the following directory structure and files:
+            //                  KEY:
+            //                      SolutionName = User input.
+            //                      ProjectName  = Defaults to Solution name, but can be user specified.
+            //                      LibraryName  = Defaults to Solution name + "Library", but can be user specified.
+            //                                     Library name will ALWAYS have "Library" appended to it.
+            //                      TestName     = Defaults to Solution name + "Tests", but can be user specified.
+            //                                     Test name will ALWAYS have "Tests" appended to it.
+            //                  c:\Data\Source\C#\<SolutionName>\
+            //                                                	 SolutionName.sln
+            //                                                  \ProjectName\
+	        //                                                              \obj\
+            //                                                          	     project.assets.json
+	        //                                                                   project.nuget.cache
+            //                                                              	 ProjectName.csproj.nuget.dgspec.json
+	        //                                                                   ProjectName.csproj.nuget.g.props
+	        //                                                                   ProjectName.csproj.nuget.g.targets
+	        //                                                               Program.cs
+	        //                                                               ProjectName.csproj
+            //                                                  \LibraryName\
+            //                                                          	\obj\
+            //                                                          	     project.assets.json
+	        //                                                                   project.nuget.cache
+            //                                                              	 LibraryName.csproj.nuget.dgspec.json
+	        //                                                                   LibraryName.csproj.nuget.g.props
+	        //                                                                   LibraryName.csproj.nuget.g.targets
+            //                                                          	 Class1.cs
+            //                                                          	 LibraryName.csproj
+            //                                                  \TestName\
+            //                                                      	 \obj\
+            //                                                      	     \TestName.csproj
+            //                                                          	  UnitTest1.cs
+            //                                                          	     project.assets.json
+	        //                                                                   project.nuget.cache
+            //                                                              	 TestName.csproj.nuget.dgspec.json
+	        //                                                                   TestName.csproj.nuget.g.props
+	        //                                                                   TestName.csproj.nuget.g.targets
+            //          5. All dotnet "add reference" statements are executed as required.
+            //                                               
             // Notes:
             //          VS Code has a bug in it where it won't accept user input while running in its terminal.
             //          I provided a default value of "TestApplication" so that it simulates user input.
             //          If run via command prompt, simply specify "input" as a parameter it will force the
             //          application to use User Input from the terminal.
+            //
+            //          To execute at the command prompt and allow user input, enter:
+            //                  cd\<ProjectDir>
+            //                  dotnet run input
+            //
+            //          To execute with default "TestApplication" as a solution name, enter:
+            //                  cd\<ProjectDir>
+            //                  dotnet run
+            //
+            //          Program will display derived run-time values and ask for confirmation before executing the set of commands.
+            //
+            //          Program will display build status as it builds the objects and it wil display a recap at the end.
+            //
+            // Limitations:
+            //          You can't create a solution file called "x.sln" or "X.sln".
 
-            string defaultValue = "TestApplication";                               // Skip user input
-            try
-            {
-                 defaultValue = args[0];
-            }
-            catch (System.Exception)
-            {
-                defaultValue = "TestApplication";
-            }
-            if ( defaultValue == "input" )
-            {
-                defaultValue = "";                                                 // Force user input
-            }
+            string defaultValue = HousekeepingClass.Housekeeping(args);
 
-            UserInput ui = UserInteractions.GetUserInput(defaultValue);
+            UserInput ui = UserInput.GetUserInput(defaultValue);
             if ( ui.SolutionName == "x" )
             {
                 Console.WriteLine("Execution terminated by user request.");
                 return;
             }
 
-            OsCommand[] cmdArray = LoadArray(ui);
-            BuildSolutionFile(cmdArray);
-            DisplayExecutionStatus(cmdArray, ui);
+            OsCommand[] cmdArray = OsCommand.LoadArray(ui);
+            string filename = $"{ui.SolutionDirectory}/{ui.SolutionName}.sln";
+
+            if ( File.Exists(filename) )
+            {
+                Console.WriteLine("");
+                Console.WriteLine("ERROR:");
+                Console.WriteLine($"Solution file '{filename}' exists, program aborted.");
+                return;    
+            }
+            BuildSolutionFileClass.BuildSolutionFile(cmdArray, ui);
+            DisplayExecutionStatusClass.DisplayExecutionStatus(cmdArray, ui);
          
             return;
         }
-        public static OsCommand[] LoadArray(UserInput ui)
-        {
-            // Commands required to build a C# .NET Solution File
-            OsCommand[] cmdArray = new OsCommand[8];
-            cmdArray[0] = new OsCommand("mkdir", $" {ui.SolutionDirectory}");
-            cmdArray[1] = new OsCommand("cmd.exe", $" /C cd /d {ui.SolutionDirectory}");
-            cmdArray[2] = new OsCommand("cmd.exe", $" /C cd /d {ui.SolutionDirectory} & dotnet new sln -n {ui.SolutionName}");
-            cmdArray[3] = new OsCommand("cmd.exe", $" /C cd /d {ui.SolutionDirectory} & dotnet new console -n {ui.ProjectName}");
-            cmdArray[4] = new OsCommand("cmd.exe", $" /C cd /d {ui.SolutionDirectory} & dotnet new classlib -n {ui.LibraryName}");
-            cmdArray[5] = new OsCommand("cmd.exe", $" /C cd /d {ui.SolutionDirectory} & dotnet sln {ui.SolutionName}.sln add ./{ui.ProjectName}/{ui.ProjectName}.csproj");
-            cmdArray[6] = new OsCommand("cmd.exe", $" /C cd /d {ui.SolutionDirectory} & dotnet sln {ui.SolutionName}.sln add ./{ui.LibraryName}/{ui.LibraryName}.csproj");
-            cmdArray[7] = new OsCommand("cmd.exe", $" /C cd /d {ui.SolutionDirectory} & dotnet add {ui.ProjectName}/{ui.ProjectName}.csproj reference {ui.LibraryName}/{ui.LibraryName}.csproj");
-            return cmdArray;
-        }
-        public static void BuildSolutionFile(OsCommand[] cmdArray)
-        {
-            // Execute command required to build .NET C# Solution File
-            int maxRc = 0;
 
-            for (int i = 0; i < cmdArray.Count(); i++)
-            {
-                OsCommand tmp = cmdArray[i];
-                cmdArray[i] = ExecuteOsCommand.ExecuteCommand(tmp);
-                tmp = cmdArray[i];
-                if ( tmp.Rc == 99 )
-                {
-                    i     = tmp.Rc;
-                    maxRc = i;
-                }
-            }            
-            return;
-        }
-        public static void DisplayExecutionStatus(OsCommand[] cmdArray, UserInput ui)
-        {
-            // Display command execution results. rc=99 = Failed execution, abort.
-            Console.WriteLine("");
-            Console.WriteLine("EXECUTION STATUS:");
-            Console.WriteLine("");
-
-            int maxRc = 0;
-            bool executed = true;
-
-            for (int i = 0; i < cmdArray.Count(); i++)
-            {
-                if ( executed == true)
-                {
-                    OsCommand tmp = cmdArray[i];
-                    Console.WriteLine($"EXECUTE: {tmp.Cmd}{tmp.Parm}");
-                    Console.WriteLine($" STATUS: {tmp.Output}");
-                    if ( tmp.Rc > maxRc )
-                    {
-                        maxRc = tmp.Rc;
-                    }
-                    if ( tmp.Rc == 99 )
-                    {
-                        executed = false;       // Future commands didn't execute, aborted.
-                    }
-                }
-
-            }
-            // Wrap it up.
-            Console.WriteLine("");
-            if ( maxRc < 99 )
-            {
-                Console.WriteLine($"Solution File {ui.SolutionName} Created Successfully.");
-            } else
-            {
-                Console.WriteLine($"Create Solution File {ui.SolutionName} Failed.");                
-            }
-            return;
-        }
     }
 }
