@@ -35,13 +35,32 @@ namespace CreateSolutionFileTests
             //Assert.AreEqual("x", HousekeepingClass.Housekeeping(args));
             Assert.Pass("x", HousekeepingClass.Housekeeping(args)); 
         }
-        /*
+
         [Test]
         public void Test4_GetSolutionFileName_Default()
         {
             // Test default solution name
-            Assert.AreEqual("default", UserInput.GetSolutionFileName("default"");
+            string sfn = UserInput.GetSolutionFileName("default");
+            Assert.AreEqual("default", UserInput.GetSolutionFileName(sfn));
         }
-        */
+
+        [Test]
+        public void Test5_GetSolutionFileName_x()
+        {
+            // Test default solution name
+            string sfn = UserInput.GetSolutionFileName("x");
+            Assert.AreEqual("x", UserInput.GetSolutionFileName(sfn));
+        }
+
+        [Test]
+        public void Test6_GetUserInput()
+        {
+            // Test default solution name
+            UserInput ui    = new UserInput("TestProject");
+            UserInput ni    = UserInput.GetUserInput("TestProject");
+            string baseLine = $"{ui.SolutionName}{ui.ProjectName}{ui.LibraryName}{ui.TestName}{ui.SolutionDirectory}";
+            string newLine  = $"{ni.SolutionName}{ni.ProjectName}{ni.LibraryName}{ni.TestName}{ni.SolutionDirectory}";
+            Assert.AreEqual(baseLine, newLine);
+        }        
     }
 }
