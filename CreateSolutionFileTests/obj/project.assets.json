@@ -4974,11 +4974,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileTests\\CreateSolutionFileTests.csproj",
+      "projectUniqueName": "C:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileTests\\CreateSolutionFileTests.csproj",
       "projectName": "CreateSolutionFileTests",
-      "projectPath": "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileTests\\CreateSolutionFileTests.csproj",
+      "projectPath": "C:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileTests\\CreateSolutionFileTests.csproj",
       "packagesPath": "C:\\Users\\Ed\\.nuget\\packages\\",
-      "outputPath": "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileTests\\obj\\",
+      "outputPath": "C:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ed\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -4993,8 +4993,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\CreateSolutionFileLibrary.csproj": {
-              "projectPath": "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\CreateSolutionFileLibrary.csproj"
+            "C:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\CreateSolutionFileLibrary.csproj": {
+              "projectPath": "C:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\CreateSolutionFileLibrary.csproj"
             }
           }
         }

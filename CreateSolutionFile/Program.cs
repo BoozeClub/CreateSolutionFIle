@@ -28,14 +28,14 @@ namespace CreateSolutionFile
             //                  Test Project name will always have "Tests" appended to it.
             //                  Default program class is named Program.cs.
             //                  Default library class is named Class1.cs.
-            //                  Default nUnit test class is named Unit_Test1.cs.
+            //                  Default NUnit test class is named Unit_Test1.cs.
             //          4. Creates the following directory structure and files:
             //                  KEY:
             //                      SolutionName = User input.
-            //                      ProjectName  = Defaults to Solution name, but can be user specified.
-            //                      LibraryName  = Defaults to Solution name + "Library", but can be user specified.
+            //                      ProjectName  = Defaults to Solution name.
+            //                      LibraryName  = Defaults to Solution name + "Library".
             //                                     Library name will ALWAYS have "Library" appended to it.
-            //                      TestName     = Defaults to Solution name + "Tests", but can be user specified.
+            //                      TestName     = Defaults to Solution name + "Tests".
             //                                     Test name will ALWAYS have "Tests" appended to it.
             //                  c:\Data\Source\C#\<SolutionName>\
             //                                                	 SolutionName.sln
@@ -71,8 +71,8 @@ namespace CreateSolutionFile
             // Notes:
             //          VS Code has a bug in it where it won't accept user input while running in its terminal.
             //          I provided a default value of "TestApplication" so that it simulates user input.
-            //          If run via command prompt, simply specify "input" as a parameter it will force the
-            //          application to use User Input from the terminal.
+            //          If run via command prompt, simply specify "input" as a parameter. It will force the
+            //          application to prompt for User Input from the terminal.
             //
             //          To execute at the command prompt and allow user input, enter:
             //                  cd\<ProjectDir>
