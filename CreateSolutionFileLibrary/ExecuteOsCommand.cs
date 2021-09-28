@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using System.Diagnostics;
+
 namespace CreateSolutionFileLibrary
 {
     public static class ExecuteOsCommand

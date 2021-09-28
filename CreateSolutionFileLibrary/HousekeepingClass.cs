@@ -22,6 +22,7 @@ namespace CreateSolutionFileLibrary
             {
                 defaultValue = "";                                                 // Force user input
             }
+
             return defaultValue;
         }
     }

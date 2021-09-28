@@ -1,4 +1,3 @@
-using System;
 using NUnit.Framework;
 using CreateSolutionFileLibrary;
 
@@ -15,7 +14,7 @@ namespace CreateSolutionFileTests
         [Test]
         public void Test1_Housekeeping_Null()
         {
-            string[] args = null;
+            string[] args = new string[] {""};
             Assert.AreEqual("TestApplication", HousekeepingClass.Housekeeping(args));
         }
         
@@ -31,7 +30,7 @@ namespace CreateSolutionFileTests
         {
             // Unable to perform this test since VS Code won't prompt for user input.
             // Placed here for documentation purposes only.
-            string[] args = new string[] {"input"};
+            string[] args = new string[] {"x"};
             Assert.AreEqual("x", HousekeepingClass.Housekeeping(args));
             //Assert.Pass("x", HousekeepingClass.Housekeeping(args)); 
         }
