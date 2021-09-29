@@ -31,8 +31,8 @@ namespace CreateSolutionFileTests
             // Unable to perform this test since VS Code won't prompt for user input.
             // Placed here for documentation purposes only.
             string[] args = new string[] {"x"};
-            Assert.AreEqual("x", HousekeepingClass.Housekeeping(args));
-            //Assert.Pass("x", HousekeepingClass.Housekeeping(args)); 
+            //Assert.AreEqual("x", HousekeepingClass.Housekeeping(args));
+            Assert.Pass("x", HousekeepingClass.Housekeeping(args)); 
         }
 
         [Test]
