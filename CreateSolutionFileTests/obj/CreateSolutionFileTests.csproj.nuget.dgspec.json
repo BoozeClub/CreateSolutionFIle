@@ -1,0 +1,134 @@
+{
+  "format": 1,
+  "restore": {
+    "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileTests\\CreateSolutionFileTests.csproj": {}
+  },
+  "projects": {
+    "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\CreateSolutionFileLibrary.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\CreateSolutionFileLibrary.csproj",
+        "projectName": "CreateSolutionFileLibrary",
+        "projectPath": "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\CreateSolutionFileLibrary.csproj",
+        "packagesPath": "C:\\Users\\Ed\\.nuget\\packages\\",
+        "outputPath": "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ed\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileTests\\CreateSolutionFileTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileTests\\CreateSolutionFileTests.csproj",
+        "projectName": "CreateSolutionFileTests",
+        "projectPath": "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileTests\\CreateSolutionFileTests.csproj",
+        "packagesPath": "C:\\Users\\Ed\\.nuget\\packages\\",
+        "outputPath": "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ed\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\CreateSolutionFileLibrary.csproj": {
+                "projectPath": "c:\\Data\\Source\\C#\\CreateSolutionFile\\CreateSolutionFileLibrary\\CreateSolutionFileLibrary.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.9.4, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.1, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[3.17.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

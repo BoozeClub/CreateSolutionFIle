@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "CreateSolutionFile/1.0.0": {
+        "dependencies": {
+          "CreateSolutionFileLibrary": "1.0.0"
+        },
+        "runtime": {
+          "CreateSolutionFile.dll": {}
+        }
+      },
+      "CreateSolutionFileLibrary/1.0.0": {
+        "runtime": {
+          "CreateSolutionFileLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CreateSolutionFile/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CreateSolutionFileLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
